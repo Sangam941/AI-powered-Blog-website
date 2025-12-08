@@ -9,7 +9,7 @@ const Layout = ({token}) => {
         <>
             {token && <div className='h-screen'>
             <AdminNavbar token={token}/>
-            <div className='flex'>
+            <div className='flex relative'>
                 <Sidebar />
                 <Outlet />
             </div>

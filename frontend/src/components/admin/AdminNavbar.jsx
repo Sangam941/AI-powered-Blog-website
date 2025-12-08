@@ -14,11 +14,11 @@ const AdminNavbar = ({token}) => {
         }
     }
   return (
-    <div className='flex shadow-md items-center justify-between px-10 py-4 font-semibold'>
-      <div className="logo text-xl">
+    <div className='flex shadow-md items-center justify-between px-10 py-4 font-semibold max-sm:px-4 max-sm:py-2 max-sm:text-sm'>
+      <div className="logo text-xl max-sm:text-lg">
         <Link to={'/'}>Blog Website</Link>
       </div>
-        <button onClick={()=>handleLogout()} className="login flex items-center gap-2 rounded-full px-6 py-2 bg-red-700 text-white">
+        <button onClick={()=>handleLogout()} className="login flex items-center gap-2 rounded-full px-6 py-2 bg-red-700 text-white max-sm:px-5 max-sm:py-1 max-sm:text-sm">
             <span>{token && 'Logout'}</span>
             <span><ArrowRight size={18}/></span>
         </button>
