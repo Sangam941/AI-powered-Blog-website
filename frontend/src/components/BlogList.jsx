@@ -34,7 +34,7 @@ const BlogList = ({ blogs }) => {
 
         <div className='flex flex-col items-center gap-5 mt-8 py-5 max-sm:px-4 w-full'>
 
-            <form onSubmit={(e)=>handleSubmit(e)} className='border-[1px] outline-none border-gray-400 rounded-md px-1 py-1 w-1/2 flex justify-beteween mb-3 max-sm:w-full max-sm:flex-col max-sm:gap-2'>
+            <form onSubmit={(e)=>handleSubmit(e)} className='border-[1px] outline-none border-gray-400 rounded-md px-1 py-1 w-1/2 flex justify-beteween mb-3 max-sm:w-full max-sm:flex-col max-sm:gap-2 max-sm:text-sm'>
                 <input
                     value={search}
                     onChange={(e) => handleChange(e)}
@@ -44,7 +44,7 @@ const BlogList = ({ blogs }) => {
 
                 <input type="submit"
                     value="Search"
-                    className='text-white bg-blue-700 px-6 py-2 rounded-md hover:scale-105 transition-all cursor-pointer' />
+                    className='text-white bg-blue-700 px-6 py-2 rounded-md active:scale-95 transition-all cursor-pointer max-sm:py-1' />
             </form>
             {/* category choose */}
             <div className="category flex gap-3 max-sm:overflow-x-auto max-sm:w-full max-sm:px-2">
