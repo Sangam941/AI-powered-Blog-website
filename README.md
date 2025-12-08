@@ -47,7 +47,7 @@ The key feature of this project is **AI-powered blog description generation**, w
 
 ---
 
-# Website Link : `https://ai-powered-blog-website.vercel.app/`
+**Website Link :** `https://ai-powered-blog-website.vercel.app/`
 
 # Environment Variables for This Project
 
