@@ -1,7 +1,8 @@
 import React from 'react'
 import Sidebar from '../../components/admin/Sidebar'
 import { Outlet } from 'react-router-dom'
-import AdminNavbar from '../../components/admin/adminNavbar'
+import AdminNavbar from "../../components/admin/AdminNavbar"; 
+
 
 const Layout = ({token}) => {
     return (
