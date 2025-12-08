@@ -58,6 +58,7 @@ import {
   Trash,
   CircleCheckBig ,
   CloudUpload,
+  X,
 } from "lucide-react";
 
 // each icon stored as JSX <Icon />
@@ -73,6 +74,7 @@ export const icons = {
   tick : <CircleCheckBig size={24} stroke="green"/>,
   upload : <CloudUpload size={28} />,
   user: <User size={24} />,
+  cross: <X size={24} />,
   settings: <Settings size={24} />,
   home: <Home size={24} />,
   search: <Search size={24} />,
