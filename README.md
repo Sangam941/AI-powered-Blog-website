@@ -47,6 +47,7 @@ The key feature of this project is **AI-powered blog description generation**, w
 
 ---
 
+## Website Link : `https://ai-powered-blog-website.vercel.app/`
 
 # Environment Variables for This Project
 
@@ -57,14 +58,14 @@ This file lists all environment variables needed for both frontend and backend.
 
 ## Backend Environment Variables (`backend/.env`)
 
-`PORT`  
+**`PORT`  
 `MONGODB_URL`  
 `JWT_SECRET`  
 `JWT_TOKEN_EXPIRE`  
 `CLOUD_NAME`  
 `CLOUD_API`  
 `CLOUD_SECRET`  
-`GEMINI_API_KEY`
+`GEMINI_API_KEY`**
 ---
 
 ## Frontend Environment Variables (`frontend/.env`)
@@ -80,3 +81,4 @@ This file lists all environment variables needed for both frontend and backend.
   1. Create `.env` in backend and frontend  
   2. Copy keys from this `.md` file and fill your real secrets  
 - For production, set environment variables in your hosting provider (Render / Vercel)  
+ 
