@@ -17,10 +17,6 @@ const Header = () => {
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur suscipit maxime, modi repellat similique totam quasi cum accusantium, aut debitis enim eius nesciunt.
       </div>
 
-      <form className='border-[1px] outline-none border-gray-400 rounded-md px-1 py-1 w-1/2 flex justify-beteween mt-3'>
-        <input type="text" placeholder='Search for blogs' className='outline-none w-full px-3' />
-        <input type="submit" value="Search" className='text-white bg-blue-700 px-6 py-2 rounded-md hover:scale-105 transition-all cursor-pointer' />
-      </form>
     </div>
   )
 }

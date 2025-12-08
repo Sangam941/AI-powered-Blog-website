@@ -161,17 +161,10 @@ export const generateDescription = async (req, res) => {
             return res.status(400).json({ success: false, message: "Title is required" });
         }
 
-        // const prompt = `
-        //     Generate a blog description in HTML format for the topic: "${title}".
-        //     IMPORTANT:
-        //     - Return ONLY HTML.
-        //     - NO explanation.
-        //     - NO markdown.
-        //     - NO backticks.
-        //     Just pure HTML content. but for now provide me a sample and provide the output of 4-5 lines.
-        //     `;
+        const prompt = `
+            Generate a short blog description for the title ${title} using normal HTML tags     like <h1>, <h2>, <p>, <strong>, and <em>. Do not include markdown or backticks.`;
 
-        const prompt = "who are you? provide this answer in single line HTML format.";
+        // const prompt = "who are you? provide this answer in single line HTML format.";
 
         // Call AI correctly
         const generatedDescription = await main(prompt);
@@ -179,6 +172,7 @@ export const generateDescription = async (req, res) => {
         return res.status(200).json({
             success: true,
             generatedDescription
+            // prompt,
         });
     } catch (error) {
         return res.status(500).json({ success: false, message: error.message });

@@ -41,8 +41,6 @@ export const CommentContext = ({children}) => {
         try {
             const {data} = await axios.get('/comment/get-all-comment')
 
-            console.log(data.allComment)
-
             setComment(data.allComment)
 
         } catch (error) {

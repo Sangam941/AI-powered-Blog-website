@@ -17,8 +17,6 @@ export const AuthContext = ({children}) => {
         try {
             const {data} = await axios.post('/user/register', {username, email, password})
 
-            console.log(data)
-
             navigate('/login')
             setUser(data)
             toast.success(data.message)
@@ -31,8 +29,6 @@ export const AuthContext = ({children}) => {
     const loginUser = async (email,password, navigate)=>{
         try {
             const {data} = await axios.post('/user/login', {email, password})
-
-            console.log(data)
 
             localStorage.setItem("token", data.token)
             setToken(data.token)

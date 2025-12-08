@@ -50,7 +50,6 @@ export const BlogContext = ({ children }) => {
         setLoading(true)
         try {
             const { data } = await axios.get('/blog/get-dashboard-data')
-            console.log(data.dashboardData)
 
             setDashboard(data.dashboardData)
         } catch (error) {
@@ -66,8 +65,6 @@ export const BlogContext = ({ children }) => {
         setLoading(true)
         try {
             const { data } = await axios.post('/blog/add-blog', formData)
-
-            console.log(data.newBlog)
 
             toast.success(data.message)
             setBlogs(prev => [data.newBlog, ...prev])
@@ -133,9 +130,7 @@ export const BlogContext = ({ children }) => {
         try {
             const { data } = await axios.post('/blog/generate-desc', { title })
             
-            console.log(data)
-            console.log(data.generatedDescription)
-            quill.current.innerHTML = data.generatedDescription
+            quill.current.root.innerHTML = data.generatedDescription
 
             toast.success("Description generated successfully")
 

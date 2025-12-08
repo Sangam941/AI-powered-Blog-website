@@ -8,9 +8,44 @@ const BlogList = ({ blogs }) => {
 
     const [selectedCategory, setSelectedCategory] = useState("All")
 
+    const [search, setSearch] = useState('')
+    const [filteredBlogs, setFilteredBlogs] = useState([])
+
+    const handleSubmit = (e) => {
+
+        e.preventDefault()
+
+        const filtered = blogs.filter((blog) => {
+            return blog.title.toLowerCase().includes(search.toLowerCase()) || blog.subtitle.toLowerCase().includes(search.toLowerCase())
+        })
+
+        setFilteredBlogs(filtered)
+    }
+
+    const handleChange = (e) => {
+        setSearch(e.target.value)
+
+        if(search === ''){
+            setFilteredBlogs([])
+        }
+    }
+
     return (
- 
+
         <div className='flex flex-col items-center gap-5 mt-8 py-5'>
+
+            <form onSubmit={(e)=>handleSubmit(e)} className='border-[1px] outline-none border-gray-400 rounded-md px-1 py-1 w-1/2 flex justify-beteween mb-3'>
+                <input
+                    value={search}
+                    onChange={(e) => handleChange(e)}
+                    type="text"
+                    placeholder='Search for blogs'
+                    className='outline-none w-full px-3' />
+
+                <input type="submit"
+                    value="Search"
+                    className='text-white bg-blue-700 px-6 py-2 rounded-md hover:scale-105 transition-all cursor-pointer' />
+            </form>
             {/* category choose */}
             <div className="category flex gap-3">
                 {category.map((item, index) => {
@@ -33,11 +68,20 @@ const BlogList = ({ blogs }) => {
             <div className="blog-card grid grid-cols-4 gap-6 px-10 pt-5 max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3">
                 {
                     blogs.length === 0 ? <div>No blogs available</div> :
-                        blogs.filter((blog) => {
-                            return selectedCategory === "All" ? true : blog.category === selectedCategory
-                        }).map((blog) => {
-                            return <BlogCard key={blog._id} blog={blog} />
-                        })
+                        (search ?
+                            filteredBlogs.length === 0 ? <div>No blogs found</div> :
+                                filteredBlogs.filter((blog) => {
+                                    return selectedCategory === "All" ? true : blog.category === selectedCategory
+                                }).map((blog) => {
+                                    return <BlogCard key={blog._id} blog={blog} />
+                                })
+                            :
+                            blogs.filter((blog) => {
+                                return selectedCategory === "All" ? true : blog.category === selectedCategory
+                            }).map((blog) => {
+                                return <BlogCard key={blog._id} blog={blog} />
+                            })
+                        )
                 }
 
             </div>
