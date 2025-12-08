@@ -34,21 +34,21 @@ const Blog = () => {
       {loading || !singleBlog || !singleBlog.image ? <Loading /> :
         <div className='w-full'>
           {/* header section  */}
-          <div className="header mt-10 flex flex-col justify-center items-center gap-3 py-10 w-1/2 m-auto text-center">
-            <p className='text-sm text-blue-600'>Published on {Moment(singleBlog.createdAt).format('Do MMMM YYYY')}</p>
-            <h1 className='text-4xl font-semibold'>{singleBlog.title}</h1>
-            <p className='text-sm text-gray-400'>{singleBlog.subtitle}</p>
-            <button className="author text-sm text-blue-600 border border-blue-300 outline-none px-3 py-1 rounded-full bg-purple-100">{singleBlog.author.username}</button>
+          <div className="header mt-10 flex flex-col justify-center items-center gap-3 py-10 w-1/2 m-auto text-center max-sm:w-11/12 max-sm:py-3 max-sm:mt-5 max-sm:gap-1 max-sm:px-5">
+            <p className='text-sm text-blue-600 max-sm:text-xs'>Published on {Moment(singleBlog.createdAt).format('Do MMMM YYYY')}</p>
+            <h1 className='text-4xl font-semibold max-sm:text-2xl'>{singleBlog.title}</h1>
+            <p className='text-sm text-gray-400 max-sm:text-xs'>{singleBlog.subtitle}</p>
+            <button className="author text-sm text-blue-600 border border-blue-300 outline-none px-3 py-1 rounded-full bg-purple-100 max-sm:text-xs max-sm:py-0.3">{singleBlog.author.username}</button>
           </div>
 
           {/* blog content  */}
-          <div className="blog-content w-2/3 m-auto flex flex-col gap-5 mb-10">
+          <div className="blog-content w-2/3 m-auto flex flex-col gap-5 mb-10 max-sm:w-11/12 max-sm:mb-5 max-sm:gap-3 max-sm:mb-5">
             <img src={singleBlog?.image?.url} alt="blog banner" className='w-full object-cover rounded-xl' />
-            <p className='text-gray-600 mx-20 m-auto py-5 blog-content' dangerouslySetInnerHTML={{ __html: singleBlog.description }}></p>
+            <p className='text-gray-600 mx-20 m-auto py-5 blog-content max-sm:mx-6 max-sm:py-3' dangerouslySetInnerHTML={{ __html: singleBlog.description }}></p>
           </div>
 
           {/* comment section  */}
-          <div className="comment-section w-2/3 m-auto px-20">
+          <div className="comment-section w-2/3 m-auto px-20 max-sm:px-0 max-sm:w-11/12">
             <h1 className='font-semibold'>Comment ({allComments?.length || 0})</h1>
             {
               allComments?.map((comment, idx) => {
@@ -70,7 +70,7 @@ const Blog = () => {
           </div>
 
           {/* add comment */}
-          <form onSubmit={(e) => handleSubmit(e)} className='w-2/3 px-20 m-auto py-10'>
+          <form onSubmit={(e) => handleSubmit(e)} className='w-2/3 px-20 m-auto py-10 max-sm:px-0 max-sm:w-11/12 max-sm:py-5'>
             <div className="add-comment font-semibold">Add your comment</div>
             <div className='flex flex-col gap-3 py-4'>
 
