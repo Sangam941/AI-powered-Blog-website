@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.blog-content h1 {
+  @apply text-3xl font-bold mb-4;
+}
+
+.blog-content h2 {
+  @apply text-2xl font-semibold mb-3;
+}
+
+.blog-content h3 {
+  @apply text-xl font-semibold mb-2;
+}
+
+.blog-content p {
+  @apply text-base leading-relaxed text-gray-700 mb-4;
+}
+ 
+.blog-content ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.blog-content li {
+  @apply mb-1;
+}
+
+.blog-content img {
+  @apply rounded-lg my-4;
+}
+
