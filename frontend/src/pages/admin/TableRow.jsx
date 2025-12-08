@@ -24,11 +24,11 @@ const TableRow = ({ blog, index, updateStatus, showActions }) => {
 
   return (
     <>
-      <tr className='border-y-2 text-sm'>
-        <th className='py-4 px-2'>{index}</th>
-        <td className='py-4 px-2'>{title}</td>
-        <td className='py-4 px-2'>{date.toDateString()}</td>
-        <td className='py-4 px-2'>
+      <tr className='border-y-2 text-sm max-sm:text-xs'>
+        <th className='py-4 px-2 max-sm:py-2'>{index}</th>
+        <td className='py-4 px-2 max-sm:py-2'>{title}</td>
+        <td className='py-4 px-2 max-sm:py-2'>{date.toDateString()}</td>
+        <td className='py-4 px-2 max-sm:py-2'>
           <p className={`${isPublished ? "text-green-700" : "text-orange-700"} font-semibold`}>{isPublished ? "Published" : "Unpublished"}</p>
         </td>
         {showActions &&
