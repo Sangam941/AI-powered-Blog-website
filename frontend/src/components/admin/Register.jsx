@@ -22,10 +22,10 @@ const Register = () => {
 
     return (
         <div className='h-screen w-full flex justify-center items-center'>
-            <div className="card w-[30%] border py-10 px-6 rounded-md shadow-lg flex flex-col gap-6">
+            <div className="card max-w-[80%] border py-10 px-6 rounded-md shadow-lg flex flex-col gap-6">
                 <div className="content text-center">
                     <h1 className='font-semibold text-3xl'><span className='text-blue-800'>Admin</span> Register</h1>
-                    <p>Enter your credientials to register</p>
+                    <p>Enter your credientials to register your account</p>
                 </div>
 
                 <form onSubmit={(e) => handleSubmit(e)} className="credentials flex flex-col gap-6 mt-6">
