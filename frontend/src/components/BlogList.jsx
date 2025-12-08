@@ -32,9 +32,9 @@ const BlogList = ({ blogs }) => {
 
     return (
 
-        <div className='flex flex-col items-center gap-5 mt-8 py-5'>
+        <div className='flex flex-col items-center gap-5 mt-8 py-5 max-sm:px-4 w-full'>
 
-            <form onSubmit={(e)=>handleSubmit(e)} className='border-[1px] outline-none border-gray-400 rounded-md px-1 py-1 w-1/2 flex justify-beteween mb-3'>
+            <form onSubmit={(e)=>handleSubmit(e)} className='border-[1px] outline-none border-gray-400 rounded-md px-1 py-1 w-1/2 flex justify-beteween mb-3 max-sm:w-full max-sm:flex-col max-sm:gap-2'>
                 <input
                     value={search}
                     onChange={(e) => handleChange(e)}
@@ -47,7 +47,7 @@ const BlogList = ({ blogs }) => {
                     className='text-white bg-blue-700 px-6 py-2 rounded-md hover:scale-105 transition-all cursor-pointer' />
             </form>
             {/* category choose */}
-            <div className="category flex gap-3">
+            <div className="category flex gap-3 max-sm:overflow-x-auto max-sm:w-full max-sm:px-2">
                 {category.map((item, index) => {
                     return <div className='relative' key={index}>
                         <button
@@ -65,7 +65,7 @@ const BlogList = ({ blogs }) => {
                 })}
             </div>
 
-            <div className="blog-card grid grid-cols-4 gap-6 px-10 pt-5 max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3">
+            <div className="blog-card grid grid-cols-4 gap-6 px-10 pt-5 max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3 max-sm:px-0 w-full">
                 {
                     blogs.length === 0 ? <div>No blogs available</div> :
                         (search ?
