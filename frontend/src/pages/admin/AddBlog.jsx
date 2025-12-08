@@ -63,12 +63,12 @@ const AddBlog = () => {
 
 
   return (
-    <div className='w-full p-8 bg-blue-50 flex-1 text-sm'>
-      <div className="add-blog-container max-w-3xl bg-white rounded-md shadow-sm px-7 py-10">
-        <form onSubmit={(e) => handleSubmit(e)} className='flex flex-col gap-4'>
-          <div className="upload flex flex-col justify-center gap-3">
+    <div className='w-full p-8 bg-blue-50 flex-1 text-sm max-sm:px-2 max-sm:py-2 max-sm:overflow-y-auto'>
+      <div className="add-blog-container max-w-3xl bg-white rounded-md shadow-sm px-7 py-10 max-sm:px-4 max-sm:py-4">
+        <form onSubmit={(e) => handleSubmit(e)} className='flex flex-col gap-4 max-sm:gap-3 max-sm:text-xs'>
+          <div className="upload flex flex-col justify-center gap-3 max-sm:gap-2">
             <p>Upload Thumbnail</p>
-            <label onClick={() => upload.current.click()} className='border border-dashed border-red-500 overflow-hidden inline-block w-28 rounded-md ml-2 flex items-center justify-center bg-purple-50 cursor-pointer active:scale-95 transition all ease'>
+            <label onClick={() => upload.current.click()} className='border border-dashed border-red-500 overflow-hidden inline-block w-28 rounded-md ml-2 flex items-center justify-center bg-purple-50 cursor-pointer active:scale-95 transition all ease max-sm:w-20 h-28 max-sm:h-20 max-sm:ml-0'>
               <img src={!image ? '/images/upload.webp' : URL.createObjectURL(image)} alt="this is upload image" name="file" />
             </label>
 
@@ -77,7 +77,7 @@ const AddBlog = () => {
               ref={upload} type="file" className='hidden' required />
           </div>
 
-          <div className="title flex flex-col gap-2">
+          <div className="title flex flex-col gap-2 max-sm:gap-1">
             <label>Blog Title</label>
             <input
               onChange={(e) => setTitle(e.target.value)}
@@ -85,7 +85,7 @@ const AddBlog = () => {
               type="text" className='border px-3 py-2 text-sm outline-none border-gray-300 rounded-md' placeholder='Enter the blog title' />
           </div>
 
-          <div className="title flex flex-col gap-2">
+          <div className="title flex flex-col gap-2 max-sm:gap-1">
             <label>Sub Title</label>
             <input
               onChange={(e) => setSubtitle(e.target.value)}
@@ -93,14 +93,14 @@ const AddBlog = () => {
               type="text" className='border px-3 py-2 text-sm outline-none border-gray-300 rounded-md' placeholder='Enter the subtitle' />
           </div>
 
-          <div className="title flex flex-col gap-2">
+          <div className="title flex flex-col gap-2 max-sm:gap-1">
             <label>Blog Description</label>
-            <div className='relative border border-gray-300 rounded-md h-96 flex flex-col'>
+            <div className='relative border border-gray-300 rounded-md h-96 flex flex-col max-sm:h-72'>
               {/* Quill Editor Container */}
               <div ref={editor} className='flex-1 overflow-hidden border-none flex flex-col'></div>
               
               {/* Generate Button - Fixed at bottom */}
-              <div className='text-end'>
+              <div className='text-end max-sm:pb-1'>
                 <button 
                 onClick={(e) => generate(e)} 
                 className="bg-gray-600 rounded-md m-2 active:scale-95 transition-all generate text-white px-4 py-2">
@@ -109,12 +109,12 @@ const AddBlog = () => {
               </div>
 
               {btnLoading && <div className="load absolute bg-black/25 top-0 h-full w-full">
-                <div className="loading absolute h-10 w-10 top-1/2 left-1/2 rounded-full border-t-4 border-r-4 animate-spin border-white/40"></div>
+                <div className="loading absolute h-10 w-10 top-1/2 left-1/2 rounded-full border-t-4 border-r-4 animate-spin border-white/40 "></div>
               </div>}
             </div>
           </div>
 
-          <div className="category flex flex-col items-start gap-2">
+          <div className="category flex flex-col items-start gap-2 max-sm:gap-1">
             <label>Blog Category</label>
             <select
               onChange={(e) => setCategory(e.target.value)}
@@ -126,7 +126,7 @@ const AddBlog = () => {
             </select>
           </div>
 
-          <div className="published flex gap-2 items-center">
+          <div className="published flex gap-2 items-center max-sm:gap-1">
             <label>Published Now</label>
             <input
               onChange={(e) => setIsPublished(e.target.checked)}
@@ -134,8 +134,8 @@ const AddBlog = () => {
           </div>
 
           <div>
-            <button className={`submit px-10 font-semibold text-sm active:scale-105 py-2 ${loading && 'pointer-events-none'} rounded-md text-white bg-blue-600`}>
-              {loading ? <div className="loading flex gap-2 items-center text-gray-200">
+            <button className={`submit px-10 font-semibold text-sm active:scale-105 py-2 max-sm:text-xs max-sm:px-8 max-sm:py-1.5 ${loading && 'pointer-events-none'} rounded-md text-white bg-blue-600`}>
+              {loading ? <div className="loading flex gap-2 items-center text-gray-200 max-sm:text-xs">
                 <BtnLoader /> <span>Add Blog</span>
               </div> : 'Add Blog'}
             </button>
