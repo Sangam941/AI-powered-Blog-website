@@ -15,19 +15,19 @@ const BlogList = () => {
   return (
     <>
       {loading ? <Loading /> :
-        <div className='w-full p-8 bg-blue-50 flex-1'>
-          <h1 className='font-semibold'>All Blogs</h1>
+        <div className='w-full p-8 bg-blue-50 flex-1 max-h-screen max-sm:p-2'>
+          <h1 className='font-semibold max-sm:text-sm'>All Blogs</h1>
 
           {/* blog table  */}
-          <div className='max-w-4xl mt-5 bg-white rounded-md shadow-sm h-[430px] overflow-y-scroll'>
-            <table className='w-full table-auto text-sm'>
+          <div className='max-w-4xl mt-5 bg-white rounded-md shadow-sm h-[430px] overflow-y-scroll max-sm:h-[350px]'>
+            <table className='w-full table-auto text-sm max-sm:text-xs max-sm:table-fixed max-sm:whitespace-nowrap'>
               <thead>
                 <tr>
-                  <th className='py-4 px-2'>#</th>
-                  <td className='py-4 px-2 font-semibold'>BLOG TITLE</td>
-                  <td className='py-4 px-2 font-semibold'>DATE</td>
-                  <td className='py-4 px-2 font-semibold'>STATUS</td>
-                  <td className='py-4 px-2 font-semibold'>ACTIONS</td>
+                  <th className='w-8 py-4 px-2 max-sm:py-2'>#</th>
+                  <td className='py-4 px-2 max-sm:py-2 font-semibold w-32'>BLOG TITLE</td>
+                  <td className='py-4 px-2 max-sm:py-2 font-semibold w-32'>DATE</td>
+                  <td className='py-4 px-2 max-sm:py-2 font-semibold w-24'>STATUS</td>
+                  <td className='py-4 px-2 max-sm:py-2 font-semibold'>ACTIONS</td>
                 </tr>
               </thead>
 

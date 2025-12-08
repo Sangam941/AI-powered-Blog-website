@@ -32,8 +32,8 @@ const TableRow = ({ blog, index, updateStatus, showActions }) => {
           <p className={`${isPublished ? "text-green-700" : "text-orange-700"} font-semibold`}>{isPublished ? "Published" : "Unpublished"}</p>
         </td>
         {showActions &&
-          <td className='flex items-center gap-4 cursor-pointer'>
-            <button onClick={(e) => handleUpdateStatus(e)} className='py-2 mt-2 px-2 border px-2 py-1 rounded-md border-black active:scale-95 transition-all outline-none shadow-sm bg-gray-200'>{isPublished ? "Unpublished" : "Published"}</button>
+          <td className='flex items-center gap-4 cursor-pointer max-sm:py-1 max-sm:px-1'>
+            <button onClick={(e) => handleUpdateStatus(e)} className='py-2 mt-2 px-2 border px-2 rounded-md border-black active:scale-95 transition-all outline-none shadow-sm bg-gray-200 max-sm:py-1'>{isPublished ? "Unpublished" : "Published"}</button>
 
             <div onClick={(e) => handleDelete(e)} className="icon" title='delete'>
               {icons.delete}
