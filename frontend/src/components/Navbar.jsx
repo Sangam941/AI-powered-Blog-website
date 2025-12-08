@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react'
 const Navbar = ({token}) => {
   return (
     <div className='flex shadow-md items-center justify-between px-10 max-sm:px-4 max-sm:py-2 py-4 font-semibold'>
-      <div className="logo text-xl max-sm:text-base">
+      <div className="logo text-xl max-sm:text-md">
         <Link to={'/'}>Blog Website</Link>
       </div>
       <Link to={token?'/admin':'/login'}>
