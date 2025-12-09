@@ -11,10 +11,12 @@ const Dashboard = () => {
   const { token } = useAuthContext()
 
   useEffect(() => {
-    if(token){
+    setTimeout(() => {
+      if(token){
       getDashboard()
     }
-  }, [token])
+    }, 50);
+  }, [])
 
   return (
     <>

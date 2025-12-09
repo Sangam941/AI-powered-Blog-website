@@ -8,7 +8,9 @@ const BlogList = () => {
   const { fetchMyBlogs, updateStatus, myBlogsList, loading } = useBlogContext()
 
   useEffect(() => {
-    fetchMyBlogs()
+    setTimeout(() => {
+      fetchMyBlogs()
+    }, 50);
   }, [])
 
  
@@ -24,9 +26,9 @@ const BlogList = () => {
               <thead>
                 <tr>
                   <th className='w-8 py-4 px-2 max-sm:py-2'>#</th>
-                  <td className='py-4 px-2 max-sm:py-2 font-semibold w-32'>BLOG TITLE</td>
-                  <td className='py-4 px-2 max-sm:py-2 font-semibold w-32'>DATE</td>
-                  <td className='py-4 px-2 max-sm:py-2 font-semibold w-24'>STATUS</td>
+                  <td className='py-4 px-2 max-sm:py-2 font-semibold max-sm:w-32'>BLOG TITLE</td>
+                  <td className='py-4 px-2 max-sm:py-2 font-semibold max-sm:w-32'>DATE</td>
+                  <td className='py-4 px-2 max-sm:py-2 font-semibold max-sm:w-24'>STATUS</td>
                   <td className='py-4 px-2 max-sm:py-2 font-semibold'>ACTIONS</td>
                 </tr>
               </thead>

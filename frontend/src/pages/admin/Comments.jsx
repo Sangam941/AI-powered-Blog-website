@@ -10,7 +10,9 @@ const Comments = () => {
   const {fetchAllComment, comment} = useCommentContext()
 
   useEffect(() => {
-    fetchAllComment()
+    setTimeout(() => {
+      fetchAllComment()
+    }, 50);
   }, [])
   
 
@@ -32,9 +34,9 @@ const Comments = () => {
         <table className='w-full text-sm table-auto max-sm:text-xs max-sm:table-fixed max-sm:whitespace-nowrap'>
           <thead>
             <tr>
-              <th className='py-4 px-4 text-justify max-sm:py-2 w-60'>BLOG TITLE & COMMENT</th>
-              <th className='py-4 px-4 text-justify max-sm:py-2 w-40'>DATE</th>
-              <th className='py-4 px-4 text-justify max-sm:py-2 w-16'>ACTIONS</th>
+              <th className='py-4 px-4 text-justify max-sm:py-2 max-sm:w-60'>BLOG TITLE & COMMENT</th>
+              <th className='py-4 px-4 text-justify max-sm:py-2 max-sm:w-40'>DATE</th>
+              <th className='py-4 px-4 text-justify max-sm:py-2 max-sm:w-16'>ACTIONS</th>
             </tr>
           </thead>
 
